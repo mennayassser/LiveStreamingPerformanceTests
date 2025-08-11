@@ -1,0 +1,10 @@
+System.MissingMemberException: The server factory could not be located for the given input: Microsoft.Owin.Host.HttpListener
+   at Microsoft.Owin.Hosting.Engine.HostingEngine.ResolveServerFactory(StartContext context)
+   at Microsoft.Owin.Hosting.Engine.HostingEngine.Start(StartContext context)
+   at Microsoft.Owin.Hosting.Starter.DirectHostingStarter.Start(StartOptions options)
+   at Microsoft.Owin.Hosting.Starter.HostingStarter.Start(StartOptions options)
+   at Microsoft.Owin.Hosting.WebApp.StartImplementation(IServiceProvider services, StartOptions options)
+   at Microsoft.Owin.Hosting.WebApp.Start(StartOptions options)
+   at Microsoft.Owin.Hosting.WebApp.Start[TStartup](StartOptions options)
+   at Microsoft.Owin.Hosting.WebApp.Start[TStartup](String url)
+   at SignalRReceiver.Program.Main() in C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\Program.cs:line 36

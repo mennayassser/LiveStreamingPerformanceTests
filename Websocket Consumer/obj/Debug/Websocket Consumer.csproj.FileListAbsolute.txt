@@ -1,0 +1,10 @@
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Consumer\obj\Debug\Websocket Consumer.csproj.CoreCompileInputs.cache
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Consumer\bin\Debug\Websocket Consumer.exe.config
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Consumer\bin\Debug\Websocket Consumer.exe
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Consumer\bin\Debug\Websocket Consumer.pdb
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Consumer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Consumer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Consumer\obj\Debug\Websocket Consumer.csproj.AssemblyReference.cache
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Consumer\obj\Debug\Websocket Consumer.csproj.CopyComplete
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Consumer\obj\Debug\Websocket Consumer.exe
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Consumer\obj\Debug\Websocket Consumer.pdb

@@ -1,0 +1,10 @@
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Publisher\obj\Debug\Websocket Publisher.csproj.CoreCompileInputs.cache
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Publisher\bin\Debug\Websocket Publisher.exe.config
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Publisher\bin\Debug\Websocket Publisher.exe
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Publisher\bin\Debug\Websocket Publisher.pdb
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Publisher\bin\Debug\Newtonsoft.Json.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Publisher\bin\Debug\Newtonsoft.Json.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Publisher\obj\Debug\Websocket Publisher.csproj.AssemblyReference.cache
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Publisher\obj\Debug\Websocket Publisher.csproj.CopyComplete
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Publisher\obj\Debug\Websocket Publisher.exe
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Publisher\obj\Debug\Websocket Publisher.pdb

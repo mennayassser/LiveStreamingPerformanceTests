@@ -1,0 +1,127 @@
+2025-08-10 13:33:28.465 - SignalR Publisher Starting...
+2025-08-10 13:33:33.184 - Connecting to SignalR hub at http://localhost:8081/signalr
+2025-08-10 13:33:33.697 - Connected to SignalR hub
+2025-08-10 13:33:34.700 - Creating 100 warm-up messages...
+2025-08-10 13:33:34.701 - Message creation completed in 1.51ms
+2025-08-10 13:33:34.701 - Sending 100 warm-up messages...
+2025-08-10 13:33:35.017 - Sent 100 WARMUP messages... (Queue time: 291.441ms)
+2025-08-10 13:33:35.017 - Completed sending all 100 messages in 315.56ms
+2025-08-10 13:33:35.017 - Warm-up phase completed
+2025-08-10 13:33:37.029 - Creating 10000 test messages...
+2025-08-10 13:33:37.029 - Created 1000 TEST messages...
+2025-08-10 13:33:37.042 - Created 2000 TEST messages...
+2025-08-10 13:33:37.045 - Created 3000 TEST messages...
+2025-08-10 13:33:37.045 - Created 4000 TEST messages...
+2025-08-10 13:33:37.047 - Created 5000 TEST messages...
+2025-08-10 13:33:37.047 - Created 6000 TEST messages...
+2025-08-10 13:33:37.047 - Created 7000 TEST messages...
+2025-08-10 13:33:37.047 - Created 8000 TEST messages...
+2025-08-10 13:33:37.047 - Created 9000 TEST messages...
+2025-08-10 13:33:37.050 - Created 10000 TEST messages...
+2025-08-10 13:33:37.050 - Message creation completed in 20.32ms
+2025-08-10 13:33:37.051 - All 10000 test messages created
+2025-08-10 13:33:37.051 - Starting performance test - sending 10000 messages
+2025-08-10 13:33:37.172 - Sent 100 TEST messages... (Queue time: 121.695ms)
+2025-08-10 13:33:37.284 - Sent 200 TEST messages... (Queue time: 241.582ms)
+2025-08-10 13:33:37.412 - Sent 300 TEST messages... (Queue time: 351.723ms)
+2025-08-10 13:33:37.523 - Sent 400 TEST messages... (Queue time: 481.489ms)
+2025-08-10 13:33:37.635 - Sent 500 TEST messages... (Queue time: 589.097ms)
+2025-08-10 13:33:37.763 - Sent 600 TEST messages... (Queue time: 708.142ms)
+2025-08-10 13:33:37.891 - Sent 700 TEST messages... (Queue time: 831.778ms)
+2025-08-10 13:33:38.003 - Sent 800 TEST messages... (Queue time: 957.460ms)
+2025-08-10 13:33:38.130 - Sent 900 TEST messages... (Queue time: 1071.708ms)
+2025-08-10 13:33:38.256 - Sent 1000 TEST messages... (Queue time: 1203.591ms)
+2025-08-10 13:33:38.399 - Sent 1100 TEST messages... (Queue time: 1328.788ms)
+2025-08-10 13:33:38.540 - Sent 1200 TEST messages... (Queue time: 1470.052ms)
+2025-08-10 13:33:38.683 - Sent 1300 TEST messages... (Queue time: 1612.530ms)
+2025-08-10 13:33:38.810 - Sent 1400 TEST messages... (Queue time: 1750.363ms)
+2025-08-10 13:33:38.938 - Sent 1500 TEST messages... (Queue time: 1878.930ms)
+2025-08-10 13:33:39.065 - Sent 1600 TEST messages... (Queue time: 2003.766ms)
+2025-08-10 13:33:39.191 - Sent 1700 TEST messages... (Queue time: 2135.525ms)
+2025-08-10 13:33:39.318 - Sent 1800 TEST messages... (Queue time: 2259.932ms)
+2025-08-10 13:33:39.445 - Sent 1900 TEST messages... (Queue time: 2389.150ms)
+2025-08-10 13:33:39.572 - Sent 2000 TEST messages... (Queue time: 2514.496ms)
+2025-08-10 13:33:39.700 - Sent 2100 TEST messages... (Queue time: 2636.148ms)
+2025-08-10 13:33:39.827 - Sent 2200 TEST messages... (Queue time: 2767.363ms)
+2025-08-10 13:33:39.955 - Sent 2300 TEST messages... (Queue time: 2890.090ms)
+2025-08-10 13:33:40.081 - Sent 2400 TEST messages... (Queue time: 3020.095ms)
+2025-08-10 13:33:40.209 - Sent 2500 TEST messages... (Queue time: 3148.532ms)
+2025-08-10 13:33:40.336 - Sent 2600 TEST messages... (Queue time: 3273.437ms)
+2025-08-10 13:33:40.478 - Sent 2700 TEST messages... (Queue time: 3405.794ms)
+2025-08-10 13:33:40.620 - Sent 2800 TEST messages... (Queue time: 3543.534ms)
+2025-08-10 13:33:40.748 - Sent 2900 TEST messages... (Queue time: 3685.781ms)
+2025-08-10 13:33:40.876 - Sent 3000 TEST messages... (Queue time: 3814.727ms)
+2025-08-10 13:33:41.002 - Sent 3100 TEST messages... (Queue time: 3941.024ms)
+2025-08-10 13:33:41.142 - Sent 3200 TEST messages... (Queue time: 4078.367ms)
+2025-08-10 13:33:41.281 - Sent 3300 TEST messages... (Queue time: 4213.239ms)
+2025-08-10 13:33:41.422 - Sent 3400 TEST messages... (Queue time: 4351.846ms)
+2025-08-10 13:33:41.549 - Sent 3500 TEST messages... (Queue time: 4488.537ms)
+2025-08-10 13:33:41.676 - Sent 3600 TEST messages... (Queue time: 4615.918ms)
+2025-08-10 13:33:41.802 - Sent 3700 TEST messages... (Queue time: 4739.325ms)
+2025-08-10 13:33:41.930 - Sent 3800 TEST messages... (Queue time: 4867.972ms)
+2025-08-10 13:33:42.072 - Sent 3900 TEST messages... (Queue time: 4997.607ms)
+2025-08-10 13:33:42.214 - Sent 4000 TEST messages... (Queue time: 5139.416ms)
+2025-08-10 13:33:42.356 - Sent 4100 TEST messages... (Queue time: 5281.749ms)
+2025-08-10 13:33:42.497 - Sent 4200 TEST messages... (Queue time: 5419.368ms)
+2025-08-10 13:33:42.624 - Sent 4300 TEST messages... (Queue time: 5562.964ms)
+2025-08-10 13:33:42.751 - Sent 4400 TEST messages... (Queue time: 5687.959ms)
+2025-08-10 13:33:42.878 - Sent 4500 TEST messages... (Queue time: 5815.589ms)
+2025-08-10 13:33:43.005 - Sent 4600 TEST messages... (Queue time: 5944.251ms)
+2025-08-10 13:33:43.132 - Sent 4700 TEST messages... (Queue time: 6071.045ms)
+2025-08-10 13:33:43.273 - Sent 4800 TEST messages... (Queue time: 6197.699ms)
+2025-08-10 13:33:43.401 - Sent 4900 TEST messages... (Queue time: 6338.650ms)
+2025-08-10 13:33:43.543 - Sent 5000 TEST messages... (Queue time: 6464.465ms)
+2025-08-10 13:33:43.685 - Sent 5100 TEST messages... (Queue time: 6608.597ms)
+2025-08-10 13:33:43.827 - Sent 5200 TEST messages... (Queue time: 6756.123ms)
+2025-08-10 13:33:43.954 - Sent 5300 TEST messages... (Queue time: 6892.700ms)
+2025-08-10 13:33:44.081 - Sent 5400 TEST messages... (Queue time: 7017.928ms)
+2025-08-10 13:33:44.206 - Sent 5500 TEST messages... (Queue time: 7142.685ms)
+2025-08-10 13:33:44.333 - Sent 5600 TEST messages... (Queue time: 7270.072ms)
+2025-08-10 13:33:44.460 - Sent 5700 TEST messages... (Queue time: 7397.431ms)
+2025-08-10 13:33:44.588 - Sent 5800 TEST messages... (Queue time: 7525.349ms)
+2025-08-10 13:33:44.731 - Sent 5900 TEST messages... (Queue time: 7652.851ms)
+2025-08-10 13:33:44.859 - Sent 6000 TEST messages... (Queue time: 7796.509ms)
+2025-08-10 13:33:45.000 - Sent 6100 TEST messages... (Queue time: 7927.647ms)
+2025-08-10 13:33:45.126 - Sent 6200 TEST messages... (Queue time: 8065.742ms)
+2025-08-10 13:33:45.253 - Sent 6300 TEST messages... (Queue time: 8189.065ms)
+2025-08-10 13:33:45.379 - Sent 6400 TEST messages... (Queue time: 8316.709ms)
+2025-08-10 13:33:45.506 - Sent 6500 TEST messages... (Queue time: 8443.652ms)
+2025-08-10 13:33:45.633 - Sent 6600 TEST messages... (Queue time: 8570.002ms)
+2025-08-10 13:33:45.759 - Sent 6700 TEST messages... (Queue time: 8696.277ms)
+2025-08-10 13:33:45.886 - Sent 6800 TEST messages... (Queue time: 8823.141ms)
+2025-08-10 13:33:46.027 - Sent 6900 TEST messages... (Queue time: 8951.928ms)
+2025-08-10 13:33:46.154 - Sent 7000 TEST messages... (Queue time: 9091.679ms)
+2025-08-10 13:33:46.282 - Sent 7100 TEST messages... (Queue time: 9219.421ms)
+2025-08-10 13:33:46.409 - Sent 7200 TEST messages... (Queue time: 9344.562ms)
+2025-08-10 13:33:46.535 - Sent 7300 TEST messages... (Queue time: 9472.321ms)
+2025-08-10 13:33:46.661 - Sent 7400 TEST messages... (Queue time: 9600.702ms)
+2025-08-10 13:33:46.788 - Sent 7500 TEST messages... (Queue time: 9726.237ms)
+2025-08-10 13:33:46.915 - Sent 7600 TEST messages... (Queue time: 9850.872ms)
+2025-08-10 13:33:47.057 - Sent 7700 TEST messages... (Queue time: 9980.523ms)
+2025-08-10 13:33:47.200 - Sent 7800 TEST messages... (Queue time: 10127.158ms)
+2025-08-10 13:33:47.326 - Sent 7900 TEST messages... (Queue time: 10264.454ms)
+2025-08-10 13:33:47.469 - Sent 8000 TEST messages... (Queue time: 10387.689ms)
+2025-08-10 13:33:47.595 - Sent 8100 TEST messages... (Queue time: 10531.436ms)
+2025-08-10 13:33:47.737 - Sent 8200 TEST messages... (Queue time: 10662.471ms)
+2025-08-10 13:33:47.863 - Sent 8300 TEST messages... (Queue time: 10804.372ms)
+2025-08-10 13:33:47.991 - Sent 8400 TEST messages... (Queue time: 10929.956ms)
+2025-08-10 13:33:48.117 - Sent 8500 TEST messages... (Queue time: 11054.664ms)
+2025-08-10 13:33:48.243 - Sent 8600 TEST messages... (Queue time: 11181.441ms)
+2025-08-10 13:33:48.370 - Sent 8700 TEST messages... (Queue time: 11304.466ms)
+2025-08-10 13:33:48.512 - Sent 8800 TEST messages... (Queue time: 11434.389ms)
+2025-08-10 13:33:48.654 - Sent 8900 TEST messages... (Queue time: 11580.229ms)
+2025-08-10 13:33:48.781 - Sent 9000 TEST messages... (Queue time: 11718.833ms)
+2025-08-10 13:33:48.907 - Sent 9100 TEST messages... (Queue time: 11840.677ms)
+2025-08-10 13:33:49.034 - Sent 9200 TEST messages... (Queue time: 11968.863ms)
+2025-08-10 13:33:49.176 - Sent 9300 TEST messages... (Queue time: 12099.937ms)
+2025-08-10 13:33:49.302 - Sent 9400 TEST messages... (Queue time: 12239.060ms)
+2025-08-10 13:33:49.429 - Sent 9500 TEST messages... (Queue time: 12361.311ms)
+2025-08-10 13:33:49.570 - Sent 9600 TEST messages... (Queue time: 12497.703ms)
+2025-08-10 13:33:49.713 - Sent 9700 TEST messages... (Queue time: 12634.623ms)
+2025-08-10 13:33:49.840 - Sent 9800 TEST messages... (Queue time: 12774.280ms)
+2025-08-10 13:33:49.981 - Sent 9900 TEST messages... (Queue time: 12901.698ms)
+2025-08-10 13:33:50.108 - Sent 10000 TEST messages... (Queue time: 13043.454ms)
+2025-08-10 13:33:50.108 - Completed sending all 10000 messages in 13057.69ms
+2025-08-10 13:33:50.109 - Performance test completed in 13058ms
+2025-08-10 13:33:50.109 - Throughput: 765.81 messages/second
+2025-08-10 13:33:50.109 - Waiting for subscriber to process all messages...

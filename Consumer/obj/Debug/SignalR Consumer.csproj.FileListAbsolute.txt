@@ -1,0 +1,39 @@
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Consumer.exe.config
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Consumer.exe
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Consumer.pdb
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.Owin.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.Owin.Hosting.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Owin.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Serilog.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Serilog.Sinks.Console.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Serilog.Sinks.File.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\System.ValueTuple.dll
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.AspNet.SignalR.Client.pdb
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.AspNet.SignalR.Core.pdb
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.Owin.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.Owin.Hosting.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Serilog.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Serilog.Sinks.Console.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Serilog.Sinks.File.pdb
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\Serilog.Sinks.File.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\bin\Debug\System.ValueTuple.xml
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\obj\Debug\SignalR Consumer.csproj.CoreCompileInputs.cache
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\obj\Debug\SignalR Consumer.csproj.CopyComplete
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\obj\Debug\Consumer.exe
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\obj\Debug\Consumer.pdb
+C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Consumer\obj\Debug\SignalR Consumer.csproj.AssemblyReference.cache

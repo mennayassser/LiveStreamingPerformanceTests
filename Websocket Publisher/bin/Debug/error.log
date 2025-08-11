@@ -1,0 +1,9 @@
+System.Net.HttpListenerException (0x80004005): Failed to listen on prefix 'http://localhost:8089/' because it conflicts with an existing registration on the machine.
+   at System.Net.HttpListener.AddAllPrefixes()
+   at System.Net.HttpListener.Start()
+   at Program.<StartServer>d__3.MoveNext() in C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Publisher\Program.cs:line 35
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Program.<Main>d__2.MoveNext() in C:\Users\menna\source\repos\LiveStreamingPerformanceTest\Websocket Publisher\Program.cs:line 21
