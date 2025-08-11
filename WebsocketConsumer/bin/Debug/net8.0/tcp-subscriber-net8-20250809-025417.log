@@ -1,0 +1,28 @@
+2025-08-09 02:54:17.255 - TCP Socket Subscriber Starting (.NET 8 Version - simulating WebSocket)...
+2025-08-09 02:54:17.337 - TCP server started on port 8080 (.NET 8)
+2025-08-09 02:54:17.338 - Waiting for client connections... (.NET 8)
+2025-08-09 02:54:44.692 - Client connected (.NET 8)
+2025-08-09 02:54:44.694 - Handling client connection... (.NET 8)
+2025-08-09 02:54:47.975 - Received 1000 test messages so far... (.NET 8)
+2025-08-09 02:54:48.143 - Received 2000 test messages so far... (.NET 8)
+2025-08-09 02:54:48.300 - Received 3000 test messages so far... (.NET 8)
+2025-08-09 02:54:48.454 - Received 4000 test messages so far... (.NET 8)
+2025-08-09 02:54:48.609 - Received 5000 test messages so far... (.NET 8)
+2025-08-09 02:54:48.765 - Received 6000 test messages so far... (.NET 8)
+2025-08-09 02:54:48.921 - Received 7000 test messages so far... (.NET 8)
+2025-08-09 02:54:49.075 - Received 8000 test messages so far... (.NET 8)
+2025-08-09 02:54:49.232 - Received 9000 test messages so far... (.NET 8)
+2025-08-09 02:54:49.386 - Received 10000 test messages so far... (.NET 8)
+2025-08-09 02:54:49.387 - All test messages received. Calculating statistics... (.NET 8)
+2025-08-09 02:54:51.421 - === TCP Socket Performance Results (.NET 8 - WebSocket Simulation) ===
+2025-08-09 02:54:51.421 - Total Messages: 10000
+2025-08-09 02:54:51.424 - Test Duration: 1.55 seconds
+2025-08-09 02:54:51.424 - Throughput: 6440.72 messages/second
+2025-08-09 02:54:51.425 - Latency Statistics (ms):
+2025-08-09 02:54:51.425 -   Min: 0.009
+2025-08-09 02:54:51.425 -   Max: 4.459
+2025-08-09 02:54:51.425 -   Mean: 0.056
+2025-08-09 02:54:51.426 -   Median: 0.031
+2025-08-09 02:54:51.426 -   95th Percentile: 0.078
+2025-08-09 02:54:51.426 -   99th Percentile: 0.359
+2025-08-09 02:54:51.473 - Detailed results saved to: tcp-socket-results-net8-20250809-025451.csv

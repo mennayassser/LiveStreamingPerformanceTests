@@ -1,0 +1,14 @@
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\bin\Debug\net8.0\WebsocketConsumer.exe
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\bin\Debug\net8.0\WebsocketConsumer.deps.json
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\bin\Debug\net8.0\WebsocketConsumer.runtimeconfig.json
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\bin\Debug\net8.0\WebsocketConsumer.dll
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\bin\Debug\net8.0\WebsocketConsumer.pdb
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\obj\Debug\net8.0\WebsocketConsumer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\obj\Debug\net8.0\WebsocketConsumer.AssemblyInfoInputs.cache
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\obj\Debug\net8.0\WebsocketConsumer.AssemblyInfo.cs
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\obj\Debug\net8.0\WebsocketConsumer.csproj.CoreCompileInputs.cache
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\obj\Debug\net8.0\WebsocketConsumer.dll
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\obj\Debug\net8.0\refint\WebsocketConsumer.dll
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\obj\Debug\net8.0\WebsocketConsumer.pdb
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\obj\Debug\net8.0\WebsocketConsumer.genruntimeconfig.cache
+C:\Users\menna\source\repos\dotnet8LiveStreaming\WebsocketConsumer\obj\Debug\net8.0\ref\WebsocketConsumer.dll

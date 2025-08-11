@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C55CBE26-2698-46C3-B184-8D0F6CB9A2E6}|SignalRConsumer\\SignalRConsumer.csproj|c:\\users\\menna\\source\\repos\\dotnet8livestreaming\\signalrconsumer\\signalrconsumer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C55CBE26-2698-46C3-B184-8D0F6CB9A2E6}|SignalRConsumer\\SignalRConsumer.csproj|solutionrelative:signalrconsumer\\signalrconsumer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C55CBE26-2698-46C3-B184-8D0F6CB9A2E6}|SignalRConsumer\\SignalRConsumer.csproj|c:\\users\\menna\\source\\repos\\dotnet8livestreaming\\signalrconsumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C55CBE26-2698-46C3-B184-8D0F6CB9A2E6}|SignalRConsumer\\SignalRConsumer.csproj|solutionrelative:signalrconsumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D72BE3-D969-4E18-9410-BB31A3EBB402}|SignalRPublisher\\SignalRPublisher.csproj|c:\\users\\menna\\source\\repos\\dotnet8livestreaming\\signalrpublisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D72BE3-D969-4E18-9410-BB31A3EBB402}|SignalRPublisher\\SignalRPublisher.csproj|solutionrelative:signalrpublisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2483DC93-29BB-4A33-8B97-E6E6552D22CF}|WebsocketConsumer\\WebsocketConsumer.csproj|c:\\users\\menna\\source\\repos\\dotnet8livestreaming\\websocketconsumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2483DC93-29BB-4A33-8B97-E6E6552D22CF}|WebsocketConsumer\\WebsocketConsumer.csproj|solutionrelative:websocketconsumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB1827F-A1AF-490F-B92D-6B7632A41B1D}|WebsocketPublisher\\WebsocketPublisher.csproj|c:\\users\\menna\\source\\repos\\dotnet8livestreaming\\websocketpublisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB1827F-A1AF-490F-B92D-6B7632A41B1D}|WebsocketPublisher\\WebsocketPublisher.csproj|solutionrelative:websocketpublisher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SignalRConsumer",
+              "DocumentMoniker": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\SignalRConsumer\\SignalRConsumer.csproj",
+              "RelativeDocumentMoniker": "SignalRConsumer\\SignalRConsumer.csproj",
+              "ToolTip": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\SignalRConsumer\\SignalRConsumer.csproj",
+              "RelativeToolTip": "SignalRConsumer\\SignalRConsumer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-08T23:53:06.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\SignalRPublisher\\Program.cs",
+              "RelativeDocumentMoniker": "SignalRPublisher\\Program.cs",
+              "ToolTip": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\SignalRPublisher\\Program.cs",
+              "RelativeToolTip": "SignalRPublisher\\Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAowHwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T23:21:33.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\SignalRConsumer\\Program.cs",
+              "RelativeDocumentMoniker": "SignalRConsumer\\Program.cs",
+              "ToolTip": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\SignalRConsumer\\Program.cs",
+              "RelativeToolTip": "SignalRConsumer\\Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAcwCoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T23:23:25.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketConsumer\\Program.cs",
+              "RelativeDocumentMoniker": "WebsocketConsumer\\Program.cs",
+              "ToolTip": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketConsumer\\Program.cs",
+              "RelativeToolTip": "WebsocketConsumer\\Program.cs",
+              "ViewState": "AgIAAOMAAAAAAAAAAAAmwAUBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T23:24:23.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketPublisher\\Program.cs",
+              "RelativeDocumentMoniker": "WebsocketPublisher\\Program.cs",
+              "ToolTip": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketPublisher\\Program.cs",
+              "RelativeToolTip": "WebsocketPublisher\\Program.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAiwIMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T23:24:00.246Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
