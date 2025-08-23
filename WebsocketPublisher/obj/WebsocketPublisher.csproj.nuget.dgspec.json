@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketPublisher\\WebsocketPublisher.csproj",
-        "projectName": "WebsocketPublisher",
+        "projectName": "WebSocketProducerConsole",
         "projectPath": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketPublisher\\WebsocketPublisher.csproj",
         "packagesPath": "C:\\Users\\menna\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketPublisher\\obj\\",
@@ -50,21 +50,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNetCore.SignalR.Client": {
+            "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[11.0.2, )"
             },
-            "Microsoft.Extensions.Logging.Abstractions": {
+            "System.Text.Json": {
               "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.Extensions.Options": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "WebSocketSharp-netstandard": {
-              "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[8.0.4, )"
             }
           },
           "imports": [
@@ -79,9 +71,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

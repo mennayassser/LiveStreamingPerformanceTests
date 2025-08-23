@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\SignalRConsumer\\SignalRConsumer.csproj",
-        "projectName": "SignalRConsumer",
+        "projectName": "SignalRConsumerConsole",
         "projectPath": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\SignalRConsumer\\SignalRConsumer.csproj",
         "packagesPath": "C:\\Users\\menna\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\SignalRConsumer\\obj\\",
@@ -50,29 +50,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Hosting.Server.Abstractions": {
+            "Microsoft.AspNet.SignalR.Core": {
               "target": "Package",
-              "version": "[2.3.0, )"
+              "version": "[2.4.3, )"
             },
-            "Microsoft.AspNetCore.Http": {
+            "Microsoft.AspNetCore.SignalR": {
               "target": "Package",
-              "version": "[2.3.0, )"
+              "version": "[1.1.0, )"
             },
-            "Microsoft.AspNetCore.SignalR.Common": {
+            "System.Text.Json": {
               "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.AspNetCore.SignalR.Core": {
-              "target": "Package",
-              "version": "[1.2.0, )"
-            },
-            "Microsoft.Extensions.Hosting": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.Extensions.Hosting.Abstractions": {
-              "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.4, )"
             }
           },
           "imports": [

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36212.18 d17.14
+VisualStudioVersion = 17.14.36212.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRPublisher", "SignalRPublisher\SignalRPublisher.csproj", "{35D72BE3-D969-4E18-9410-BB31A3EBB402}"
 EndProject
@@ -10,6 +10,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsocketPublisher", "WebsocketPublisher\WebsocketPublisher.csproj", "{CCB1827F-A1AF-490F-B92D-6B7632A41B1D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsocketConsumer", "WebsocketConsumer\WebsocketConsumer.csproj", "{2483DC93-29BB-4A33-8B97-E6E6552D22CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedpandaPublisher", "RedpandaPublisher\RedpandaPublisher.csproj", "{87896E14-E78E-441F-98D7-353A80E2738B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedpandaConsumer", "RedpandaConsumer\RedpandaConsumer.csproj", "{E7A0A3B3-D08A-4FD5-929E-F07AC635FB9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaPublisher", "KafkaPublisher\KafkaPublisher.csproj", "{313937BB-EFDF-49E2-9421-C9D4931C0A03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsumer", "KafkaConsumer\KafkaConsumer.csproj", "{2C0B2793-99F5-48C1-955A-4D8EA8AFAA29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedpandaClusterPublisher", "RedpandaClusterPublisher\RedpandaClusterPublisher.csproj", "{79ACF89C-1731-4566-9250-01BC130A67DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedpandaClusterConsumer", "RedpandaClusterConsumer\RedpandaClusterConsumer.csproj", "{D77C2A30-0842-4698-9475-A1621B06460A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +45,30 @@ Global
 		{2483DC93-29BB-4A33-8B97-E6E6552D22CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2483DC93-29BB-4A33-8B97-E6E6552D22CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2483DC93-29BB-4A33-8B97-E6E6552D22CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87896E14-E78E-441F-98D7-353A80E2738B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87896E14-E78E-441F-98D7-353A80E2738B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87896E14-E78E-441F-98D7-353A80E2738B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87896E14-E78E-441F-98D7-353A80E2738B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7A0A3B3-D08A-4FD5-929E-F07AC635FB9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7A0A3B3-D08A-4FD5-929E-F07AC635FB9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7A0A3B3-D08A-4FD5-929E-F07AC635FB9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7A0A3B3-D08A-4FD5-929E-F07AC635FB9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{313937BB-EFDF-49E2-9421-C9D4931C0A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{313937BB-EFDF-49E2-9421-C9D4931C0A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{313937BB-EFDF-49E2-9421-C9D4931C0A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{313937BB-EFDF-49E2-9421-C9D4931C0A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C0B2793-99F5-48C1-955A-4D8EA8AFAA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0B2793-99F5-48C1-955A-4D8EA8AFAA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0B2793-99F5-48C1-955A-4D8EA8AFAA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0B2793-99F5-48C1-955A-4D8EA8AFAA29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79ACF89C-1731-4566-9250-01BC130A67DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79ACF89C-1731-4566-9250-01BC130A67DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79ACF89C-1731-4566-9250-01BC130A67DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79ACF89C-1731-4566-9250-01BC130A67DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D77C2A30-0842-4698-9475-A1621B06460A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D77C2A30-0842-4698-9475-A1621B06460A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D77C2A30-0842-4698-9475-A1621B06460A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D77C2A30-0842-4698-9475-A1621B06460A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

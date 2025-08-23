@@ -1,0 +1,8 @@
+2025-08-17 02:43:04.447 - SignalR Consumer Starting...
+2025-08-17 02:43:05.474 - ERROR: The route template separator character '/' cannot appear consecutively. It must be separated by either a parameter or a literal value.
+2025-08-17 02:43:05.540 - Stack Trace:    at Microsoft.AspNetCore.Routing.Patterns.RoutePatternParser.Parse(String pattern)
+   at Microsoft.AspNetCore.Builder.EndpointRouteBuilderExtensions.Map(IEndpointRouteBuilder endpoints, String pattern, RequestDelegate requestDelegate)
+   at Microsoft.AspNetCore.Builder.ConnectionEndpointRouteBuilderExtensions.MapConnections(IEndpointRouteBuilder endpoints, String pattern, HttpConnectionDispatcherOptions options, Action`1 configure)
+   at Microsoft.AspNetCore.Builder.HubEndpointRouteBuilderExtensions.MapHub[THub](IEndpointRouteBuilder endpoints, String pattern, Action`1 configureOptions)
+   at SignalRConsumerConsole.Program.StartSignalRServer() in C:\Users\menna\source\repos\dotnet8LiveStreaming\SignalRConsumer\Program.cs:line 54
+   at SignalRConsumerConsole.Program.Main(String[] args) in C:\Users\menna\source\repos\dotnet8LiveStreaming\SignalRConsumer\Program.cs:line 24

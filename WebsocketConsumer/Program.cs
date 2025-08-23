@@ -1,262 +1,211 @@
-﻿using System.Net;
-using System.Net.Sockets;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace WebSocketSubscriber
+namespace WebSocketConsumerConsole
 {
+    public class Message
+    {
+        public int Id { get; set; }
+        public string Content { get; set; }
+        public long Timestamp { get; set; }
+    }
+
+    public class LatencyResult
+    {
+        public int MessageId { get; set; }
+        public double LatencyMs { get; set; }
+    }
+
     class Program
     {
-        private static readonly List<LatencyMeasurement> Latencies = new();
-        private const int expectedTestMessages = 10000;
-        private static int receivedTestMessages = 0;
-        private static bool testCompleted = false;
-        private static string logFile = $"tcp-subscriber-net8-{DateTime.Now:yyyyMMdd-HHmmss}.log";
+        private const int EXPECTED_TEST_COUNT = 1000000;
+        private static readonly List<LatencyResult> Results = new List<LatencyResult>();
+        private static int _messagesReceived = 0;
+        private static bool _testComplete = false;
+        private static string logFile = $"websocket-consumer-{DateTime.Now:yyyyMMdd-HHmmss}.log";
+        private static readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
         static async Task Main(string[] args)
         {
-            LogMessage("TCP Socket Subscriber Starting (.NET 8 Version - simulating WebSocket)...");
-
-            try
-            {
-                await StartTcpServer();
-            }
-            catch (Exception ex)
-            {
-                LogMessage($"ERROR (.NET 8): {ex.Message}");
-                LogMessage($"Stack Trace (.NET 8): {ex.StackTrace}");
-            }
-
-            Console.WriteLine("Press any key to exit...");
+            LogMessage("WebSocket Consumer Starting...");
+            var serverTask = StartWebSocketServer();
+            LogMessage("Server is running. Press any key to stop...");
             Console.ReadKey();
+            _testComplete = true;
+            await serverTask;
         }
 
-        private static async Task StartTcpServer()
+        private static async Task StartWebSocketServer()
         {
-            var listener = new TcpListener(IPAddress.Any, 8080);
+            HttpListener listener = new HttpListener();
+            listener.Prefixes.Add("http://localhost:8080/");
             listener.Start();
+            LogMessage("Listening on http://localhost:8080/");
 
-            LogMessage("TCP server started on port 8080 (.NET 8)");
-            LogMessage("Waiting for client connections... (.NET 8)");
-
-            using var cts = new CancellationTokenSource();
-
-            while (!testCompleted && !cts.Token.IsCancellationRequested)
+            while (!_testComplete)
             {
                 try
                 {
-                    var tcpClient = await listener.AcceptTcpClientAsync();
-                    LogMessage("Client connected (.NET 8)");
-
-                    // Handle connection in background task
-                    _ = Task.Run(async () => await HandleClientConnection(tcpClient, cts.Token), cts.Token);
-                }
-                catch (Exception ex)
-                {
-                    if (!testCompleted)
-                        LogMessage($"Error accepting client connection (.NET 8): {ex.Message}");
-                    break;
-                }
-            }
-
-            listener.Stop();
-        }
-
-        private static async Task HandleClientConnection(TcpClient tcpClient, CancellationToken cancellationToken)
-        {
-            await using var stream = tcpClient.GetStream();
-
-            try
-            {
-                var buffer = new byte[4096];
-                var messageBuffer = new StringBuilder();
-
-                LogMessage("Handling client connection... (.NET 8)");
-
-                while (tcpClient.Connected && !testCompleted && !cancellationToken.IsCancellationRequested)
-                {
-                    var bytesRead = await stream.ReadAsync(buffer.AsMemory(0, buffer.Length), cancellationToken);
-                    if (bytesRead == 0) break;
-
-                    var receivedTimestamp = DateTime.UtcNow.Ticks;
-                    var data = Encoding.UTF8.GetString(buffer.AsSpan(0, bytesRead));
-                    messageBuffer.Append(data);
-
-                    // Process complete messages (assuming each message ends with \n)
-                    string bufferContent = messageBuffer.ToString();
-                    string[] messages = bufferContent.Split('\n', StringSplitOptions.RemoveEmptyEntries);
-
-                    // Keep the last incomplete message in buffer
-                    if (!bufferContent.EndsWith('\n'))
+                    HttpListenerContext context = await listener.GetContextAsync();
+                    if (context.Request.IsWebSocketRequest)
                     {
-                        messageBuffer.Clear();
-                        messageBuffer.Append(messages[^1]);
-                        messages = messages[..^1];
+                        HttpListenerWebSocketContext wsContext = await context.AcceptWebSocketAsync(null);
+                        WebSocket webSocket = wsContext.WebSocket;
+                        _ = Task.Run(() => HandleWebSocketClient(webSocket)); // Fire and forget
                     }
                     else
                     {
-                        messageBuffer.Clear();
+                        context.Response.StatusCode = 400;
+                        context.Response.Close();
+                    }
+                }
+                catch (Exception ex) when (IsExpectedShutdownError(ex))
+                {
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    LogMessage($"Server error: {ex.Message}");
+                }
+            }
+            listener.Stop();
+            LogMessage("Server stopped.");
+        }
+
+        private static async Task HandleWebSocketClient(WebSocket webSocket)
+        {
+            byte[] buffer = new byte[4 * 1024]; // 4KB buffer
+            StringBuilder sb = new StringBuilder();
+            LogMessage("Client connected.");
+
+            try
+            {
+                while (webSocket.State == WebSocketState.Open && !_testComplete)
+                {
+                    WebSocketReceiveResult result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+                    if (result.MessageType == WebSocketMessageType.Close)
+                    {
+                        await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "OK", CancellationToken.None);
+                        break;
                     }
 
-                    // Process complete messages
-                    foreach (var message in messages)
+                    string chunk = Encoding.UTF8.GetString(buffer, 0, result.Count);
+                    sb.Append(chunk);
+
+                    if (result.EndOfMessage)
                     {
-                        if (!string.IsNullOrWhiteSpace(message))
-                        {
-                            await ProcessMessage(message.Trim(), receivedTimestamp);
-                        }
+                        string fullMessage = sb.ToString();
+                        sb.Clear();
+                        ProcessWebSocketMessage(fullMessage, DateTime.UtcNow.Ticks);
                     }
                 }
             }
+            catch (Exception ex) when (IsExpectedShutdownError(ex))
+            {
+            }
             catch (Exception ex)
             {
-                LogMessage($"Connection ended (.NET 8): {ex.Message}");
+                LogMessage($"Client handling error: {ex.Message}");
             }
             finally
             {
-                tcpClient.Close();
+                webSocket?.Dispose();
+                LogMessage("Client disconnected.");
             }
         }
 
-        private static async Task ProcessMessage(string json, long receivedTimestamp)
+        private static void ProcessWebSocketMessage(string jsonMessage, long receiveTimeTicks)
         {
             try
             {
-                var message = JsonSerializer.Deserialize<JsonElement>(json);
-                var messageId = message.GetProperty("Id").GetInt32();
-                var phase = message.GetProperty("Phase").GetString();
-                var sentTimestamp = message.GetProperty("Timestamp").GetInt64();
+                Message msg = JsonSerializer.Deserialize<Message>(jsonMessage, _jsonOptions);
+                if (msg == null) return;
 
-                var latencyTicks = receivedTimestamp - sentTimestamp;
-                var latencyMs = new TimeSpan(latencyTicks).TotalMilliseconds;
-
-                // Only collect latencies for TEST phase messages
-                if (phase == "TEST")
+                if (msg.Content == "ALL_MESSAGES_SENT")
                 {
-                    bool shouldCompleteTest = false;
+                    LogMessage("Received 'done' signal. Calculating results...");
+                    CalculateResults();
+                    _testComplete = true;
+                    return;
+                }
 
-                    lock (Latencies)
+                if (msg.Id > 0) 
+                {
+                    double latencyMs = (receiveTimeTicks - msg.Timestamp) / TimeSpan.TicksPerMillisecond;
+                    lock (Results)
                     {
-                        Latencies.Add(new LatencyMeasurement
-                        {
-                            MessageId = messageId,
-                            LatencyMs = latencyMs,
-                            SentTimestamp = sentTimestamp,
-                            ReceivedTimestamp = receivedTimestamp
-                        });
+                        Results.Add(new LatencyResult { MessageId = msg.Id, LatencyMs = latencyMs });
+                        _messagesReceived++;
 
-                        receivedTestMessages++;
-
-                        if (receivedTestMessages % 1000 == 0)
-                        {
-                            LogMessage($"Received {receivedTestMessages} test messages so far... (.NET 8)");
-                        }
-
-                        if (receivedTestMessages >= expectedTestMessages)
-                        {
-                            LogMessage("All test messages received. Calculating statistics... (.NET 8)");
-                            shouldCompleteTest = true;
-                        }
-                    }
-
-                    if (shouldCompleteTest)
-                    {
-                        await Task.Delay(2000);
-                        testCompleted = true;
-                        await CalculateAndLogStatistics();
+                        if (_messagesReceived % 10000 == 0)
+                            LogMessage($"Received {_messagesReceived:N0} messages...");
                     }
                 }
             }
+            catch (JsonException)
+            {
+                LogMessage($"Failed to parse message: {jsonMessage}");
+            }
             catch (Exception ex)
             {
-                LogMessage($"Failed to parse message (.NET 8): {ex.Message}");
+                LogMessage($"Error processing message: {ex.Message}");
             }
         }
 
-        private static async Task CalculateAndLogStatistics()
+        private static void CalculateResults()
         {
-            if (Latencies.Count == 0)
+            if (Results.Count == 0)
             {
-                LogMessage("WARNING: No latency measurements collected (.NET 8)");
+                LogMessage("No results to calculate.");
                 return;
             }
 
-            var sortedLatencies = Latencies.Select(l => l.LatencyMs).OrderBy(l => l).ToArray();
+            var latencies = Results.Select(r => r.LatencyMs).OrderBy(l => l).ToArray();
+            double min = latencies.First();
+            double max = latencies.Last();
+            double avg = latencies.Average();
+            double p95 = GetPercentile(latencies, 0.95);
+            double p99 = GetPercentile(latencies, 0.99);
 
-            var min = sortedLatencies.First();
-            var max = sortedLatencies.Last();
-            var mean = sortedLatencies.Average();
-            var median = GetPercentile(sortedLatencies, 50);
-            var p95 = GetPercentile(sortedLatencies, 95);
-            var p99 = GetPercentile(sortedLatencies, 99);
+            LogMessage("===== RESULTS =====");
+            LogMessage($"Messages Processed: {Results.Count:N0}");
+            LogMessage($"Min Latency: {min:F2} ms");
+            LogMessage($"Max Latency: {max:F2} ms");
+            LogMessage($"Average Latency: {avg:F2} ms");
+            LogMessage($"95th Percentile: {p95:F2} ms");
+            LogMessage($"99th Percentile: {p99:F2} ms");
+            LogMessage("===================");
 
-            // Calculate throughput based on first and last message timestamps
-            var firstMessage = Latencies.OrderBy(l => l.ReceivedTimestamp).First();
-            var lastMessage = Latencies.OrderBy(l => l.ReceivedTimestamp).Last();
-            var testDurationSeconds = new TimeSpan(lastMessage.ReceivedTimestamp - firstMessage.ReceivedTimestamp).TotalSeconds;
-            var throughput = testDurationSeconds > 0 ? Latencies.Count / testDurationSeconds : 0;
-
-            LogMessage("=== TCP Socket Performance Results (.NET 8 - WebSocket Simulation) ===");
-            LogMessage($"Total Messages: {Latencies.Count}");
-            LogMessage($"Test Duration: {testDurationSeconds:F2} seconds");
-            LogMessage($"Throughput: {throughput:F2} messages/second");
-            LogMessage("Latency Statistics (ms):");
-            LogMessage($"  Min: {min:F3}");
-            LogMessage($"  Max: {max:F3}");
-            LogMessage($"  Mean: {mean:F3}");
-            LogMessage($"  Median: {median:F3}");
-            LogMessage($"  95th Percentile: {p95:F3}");
-            LogMessage($"  99th Percentile: {p99:F3}");
-
-            // Save detailed results to CSV file
-            await SaveResultsToCsv();
-        }
-
-        private static double GetPercentile(double[] sortedArray, int percentile)
-        {
-            if (sortedArray.Length == 0) return 0;
-
-            var index = (percentile / 100.0) * (sortedArray.Length - 1);
-            var lower = (int)Math.Floor(index);
-            var upper = (int)Math.Ceiling(index);
-
-            if (lower == upper)
-                return sortedArray[lower];
-
-            var weight = index - lower;
-            return sortedArray[lower] * (1 - weight) + sortedArray[upper] * weight;
-        }
-
-        private static async Task SaveResultsToCsv()
-        {
-            var csvPath = $"tcp-socket-results-net8-{DateTime.Now:yyyyMMdd-HHmmss}.csv";
-
-            await using var writer = new StreamWriter(csvPath);
-            await writer.WriteLineAsync("MessageId,LatencyMs,SentTimestamp,ReceivedTimestamp");
-
-            foreach (var measurement in Latencies.OrderBy(l => l.MessageId))
-            {
-                await writer.WriteLineAsync($"{measurement.MessageId},{measurement.LatencyMs:F3},{measurement.SentTimestamp},{measurement.ReceivedTimestamp}");
-            }
-
+            string csvPath = $"websocket-latency-{DateTime.Now:yyyyMMdd-HHmmss}.csv";
+            File.WriteAllLines(csvPath, new[] { "MessageId,LatencyMs" }.Concat(Results.OrderBy(r => r.MessageId).Select(r => $"{r.MessageId},{r.LatencyMs}")));
             LogMessage($"Detailed results saved to: {csvPath}");
+        }
+
+        private static double GetPercentile(double[] sortedData, double percentile)
+        {
+            int index = (int)Math.Ceiling(percentile * sortedData.Length) - 1;
+            index = Math.Max(0, Math.Min(index, sortedData.Length - 1));
+            return sortedData[index];
+        }
+
+        private static bool IsExpectedShutdownError(Exception ex)
+        {
+            return ex is OperationCanceledException || ex is WebSocketException;
         }
 
         private static void LogMessage(string message)
         {
-            var timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            var logEntry = $"{timestamp} - {message}";
-
-            Console.WriteLine(logEntry);
-            File.AppendAllText(logFile, logEntry + Environment.NewLine);
+            string entry = $"{DateTime.Now:HH:mm:ss.fff} - {message}";
+            Console.WriteLine(entry);
+            File.AppendAllText(logFile, entry + Environment.NewLine);
         }
-    }
-
-    public class LatencyMeasurement
-    {
-        public int MessageId { get; set; }
-        public double LatencyMs { get; set; }
-        public long SentTimestamp { get; set; }
-        public long ReceivedTimestamp { get; set; }
     }
 }

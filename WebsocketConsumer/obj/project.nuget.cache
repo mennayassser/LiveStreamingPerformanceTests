@@ -1,8 +1,37 @@
 {
   "version": 2,
-  "dgSpecHash": "/ujAf3Hdhxs=",
+  "dgSpecHash": "9THnZ9Y7xro=",
   "success": true,
   "projectFilePath": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketConsumer\\WebsocketConsumer.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\menna\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\menna\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\menna\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'Newtonsoft.Json' 11.0.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "projectPath": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketConsumer\\WebsocketConsumer.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketConsumer\\WebsocketConsumer.csproj",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'System.Text.Json' 8.0.4 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4",
+      "projectPath": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketConsumer\\WebsocketConsumer.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketConsumer\\WebsocketConsumer.csproj",
+      "libraryId": "System.Text.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

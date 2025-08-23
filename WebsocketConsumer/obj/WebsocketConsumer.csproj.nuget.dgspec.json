@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketConsumer\\WebsocketConsumer.csproj",
-        "projectName": "WebsocketConsumer",
+        "projectName": "WebSocketConsumerConsole",
         "projectPath": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketConsumer\\WebsocketConsumer.csproj",
         "packagesPath": "C:\\Users\\menna\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\menna\\source\\repos\\dotnet8LiveStreaming\\WebsocketConsumer\\obj\\",
@@ -49,6 +49,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

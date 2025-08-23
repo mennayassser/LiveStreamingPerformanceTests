@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "RedpandaPublisher\\RedpandaPublisher.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "RedpandaConsumer\\RedpandaConsumer.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
