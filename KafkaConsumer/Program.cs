@@ -7,7 +7,7 @@ using System.Threading;
 using Confluent.Kafka;
 using Newtonsoft.Json;
 
-namespace KafkaConsumer
+namespace RedpandaConsumer
 {
     public class Message
     {
@@ -28,11 +28,11 @@ namespace KafkaConsumer
     class Program
     {
         private static readonly List<LatencyMeasurement> Latencies = new List<LatencyMeasurement>();
-        private const int ExpectedTestMessages = 1000000;
+        private const int ExpectedTestMessages = 100;
         private static int receivedTestMessages = 0;
         private static int receivedWarmupMessages = 0;
         private static bool testCompleted = false;
-        private static string logFile = $"kafka-consumer-{DateTime.Now:yyyyMMdd-HHmmss}.log";
+        private static string logFile = $"redpanda-consumer-{DateTime.Now:yyyyMMdd-HHmmss}.log";
         private static readonly object lockObject = new object();
         private static Timer metricsTimer;
         private static DateTime? firstWarmupTime = null;
@@ -64,13 +64,14 @@ namespace KafkaConsumer
         {
             var config = new ConsumerConfig
             {
-                BootstrapServers = "localhost:9092",
-                GroupId = "kafka-perf-test-group",
+                BootstrapServers = "localhost:9093",
+                GroupId = "redpanda-perf-test-group",
                 AutoOffsetReset = AutoOffsetReset.Latest,
-                EnableAutoCommit = true,
-                FetchMinBytes = 1024,
-                FetchWaitMaxMs = 10,
+                EnableAutoCommit = false,
+                FetchMinBytes = 1,
+                FetchWaitMaxMs = 1,
                 SocketNagleDisable = true
+
             };
 
             using var consumer = new ConsumerBuilder<Ignore, string>(config).Build();
@@ -146,7 +147,7 @@ namespace KafkaConsumer
                             LogMessage($"Handshake completed: {receivedWarmupMessages} warmup messages in {handshakeDuration.TotalMilliseconds:F0}ms");
                         }
                     }
-                    return; 
+                    return; // Skip latency measurement for warmup
                 }
 
                 if (message.Phase == "TEST")

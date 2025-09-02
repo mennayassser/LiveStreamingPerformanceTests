@@ -28,7 +28,7 @@ namespace RedpandaConsumer
     class Program
     {
         private static readonly List<LatencyMeasurement> Latencies = new List<LatencyMeasurement>();
-        private const int ExpectedTestMessages = 1000000;
+        private const int ExpectedTestMessages = 100;
         private static int receivedTestMessages = 0;
         private static int receivedWarmupMessages = 0;
         private static bool testCompleted = false;
@@ -68,9 +68,10 @@ namespace RedpandaConsumer
                 GroupId = "redpanda-perf-test-group",
                 AutoOffsetReset = AutoOffsetReset.Latest,
                 EnableAutoCommit = true,
-                FetchMinBytes = 1024,
-                FetchWaitMaxMs = 10,
+                FetchMinBytes = 1,
+                FetchWaitMaxMs = 1,
                 SocketNagleDisable = true
+
             };
 
             using var consumer = new ConsumerBuilder<Ignore, string>(config).Build();

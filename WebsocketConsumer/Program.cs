@@ -26,7 +26,7 @@ namespace WebSocketConsumerConsole
 
     class Program
     {
-        private const int EXPECTED_TEST_COUNT = 1000000;
+        private const int EXPECTED_TEST_COUNT = 100000;
         private static readonly List<LatencyResult> Results = new List<LatencyResult>();
         private static int _messagesReceived = 0;
         private static bool _testComplete = false;

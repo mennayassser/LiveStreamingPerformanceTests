@@ -20,7 +20,7 @@ namespace WebSocketProducerConsole
     class Program
     {
         private const int WARM_UP_MESSAGES = 100;
-        private const int TEST_MESSAGES = 1000000;
+        private const int TEST_MESSAGES = 100000;
         private const string SERVER_URI = "ws://localhost:8080/";
         private static string logFile = $"websocket-producer-{DateTime.Now:yyyyMMdd-HHmmss}.log";
         private static readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions { WriteIndented = false };

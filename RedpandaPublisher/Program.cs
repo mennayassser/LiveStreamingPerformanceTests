@@ -17,7 +17,7 @@ namespace RedpandaHighSpeedProducer
     class Program
     {
         private const int WARM_UP_MESSAGES = 1000;
-        private const int TEST_MESSAGES = 1000000;
+        private const int TEST_MESSAGES = 100;
         private const string TOPIC_NAME = "perf-test";
         private static readonly string logFile = $"redpanda-producer-{DateTime.Now:yyyyMMdd-HHmmss}.log";
 
@@ -47,12 +47,12 @@ namespace RedpandaHighSpeedProducer
             using var producer = new ProducerBuilder<Null, string>(new ProducerConfig
             {
                 BootstrapServers = "localhost:9093",
-                LingerMs = 1,
-                BatchSize = 1048576,
-                CompressionType = CompressionType.Lz4,
+                LingerMs = 0,
+                BatchSize = 16384,
+                CompressionType = CompressionType.None,
                 Acks = Acks.Leader,
                 // SocketNagleDisable = true,  //groups small network packets together, not needed for this
-                MessageTimeoutMs = 5000
+                MessageTimeoutMs = 3000
             }).Build();
 
             // Handshake warm-up (no logging of individual messages)
