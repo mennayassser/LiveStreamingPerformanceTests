@@ -17,13 +17,13 @@ namespace RedpandaHighSpeedProducer
     class Program
     {
         private const int WARM_UP_MESSAGES = 1000;
-        private const int TEST_MESSAGES = 100;
+        private const int TEST_MESSAGES = 1000;
         private const string TOPIC_NAME = "perf-test";
-        private static readonly string logFile = $"redpanda-producer-{DateTime.Now:yyyyMMdd-HHmmss}.log";
+        private static readonly string logFile = $"kafka-producer-{DateTime.Now:yyyyMMdd-HHmmss}.log";
 
         static void Main()
         {
-            LogMessage("Producer Starting...");
+            LogMessage("Kafka Producer Starting...");
             Console.WriteLine("Press any key to begin test...");
             Console.ReadKey();
 
@@ -46,7 +46,7 @@ namespace RedpandaHighSpeedProducer
         {
             using var producer = new ProducerBuilder<Null, string>(new ProducerConfig
             {
-                BootstrapServers = "localhost:9093",
+                BootstrapServers = "localhost:9092",
                 LingerMs = 0,
                 BatchSize = 16384,
                 CompressionType = CompressionType.None,

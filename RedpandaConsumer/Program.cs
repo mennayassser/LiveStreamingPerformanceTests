@@ -28,7 +28,7 @@ namespace RedpandaConsumer
     class Program
     {
         private static readonly List<LatencyMeasurement> Latencies = new List<LatencyMeasurement>();
-        private const int ExpectedTestMessages = 100;
+        private const int ExpectedTestMessages = 1000;
         private static int receivedTestMessages = 0;
         private static int receivedWarmupMessages = 0;
         private static bool testCompleted = false;
@@ -40,7 +40,7 @@ namespace RedpandaConsumer
 
         static void Main()
         {
-            LogMessage("Consumer Starting...");
+            LogMessage("Redpanda Consumer Starting...");
 
             metricsTimer = new Timer(CheckForTestCompletion, null, TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(2));
 
@@ -67,7 +67,7 @@ namespace RedpandaConsumer
                 BootstrapServers = "localhost:9093",
                 GroupId = "redpanda-perf-test-group",
                 AutoOffsetReset = AutoOffsetReset.Latest,
-                EnableAutoCommit = true,
+                EnableAutoCommit = false,
                 FetchMinBytes = 1,
                 FetchWaitMaxMs = 1,
                 SocketNagleDisable = true
@@ -110,7 +110,7 @@ namespace RedpandaConsumer
             }
             catch (OperationCanceledException)
             {
-                LogMessage("Consumer stopped");
+                LogMessage("Redpanda Consumer stopped");
             }
             finally
             {
@@ -230,7 +230,7 @@ namespace RedpandaConsumer
 
         private static void SaveResultsToCsv(List<LatencyMeasurement> measurements)
         {
-            var csvPath = $"results-{DateTime.Now:yyyyMMdd-HHmmss}.csv";
+            var csvPath = $"redpanda-results-{DateTime.Now:yyyyMMdd-HHmmss}.csv";
             File.WriteAllLines(csvPath,
                 new[] { "MessageId,LatencyMs,ReceivedTimestampMs,ReceivedTime" }
                 .Concat(measurements.Select(m => $"{m.MessageId},{m.LatencyMs},{m.ReceivedTimestampMs},{m.ReceivedTime:yyyy-MM-dd HH:mm:ss.fff}")));

@@ -28,11 +28,11 @@ namespace RedpandaConsumer
     class Program
     {
         private static readonly List<LatencyMeasurement> Latencies = new List<LatencyMeasurement>();
-        private const int ExpectedTestMessages = 100;
+        private const int ExpectedTestMessages = 1000;
         private static int receivedTestMessages = 0;
         private static int receivedWarmupMessages = 0;
         private static bool testCompleted = false;
-        private static string logFile = $"redpanda-consumer-{DateTime.Now:yyyyMMdd-HHmmss}.log";
+        private static string logFile = $"kafka-consumer-{DateTime.Now:yyyyMMdd-HHmmss}.log";
         private static readonly object lockObject = new object();
         private static Timer metricsTimer;
         private static DateTime? firstWarmupTime = null;
@@ -40,7 +40,7 @@ namespace RedpandaConsumer
 
         static void Main()
         {
-            LogMessage("Consumer Starting...");
+            LogMessage("Kafka Consumer Starting...");
 
             metricsTimer = new Timer(CheckForTestCompletion, null, TimeSpan.FromSeconds(2), TimeSpan.FromSeconds(2));
 
@@ -64,8 +64,8 @@ namespace RedpandaConsumer
         {
             var config = new ConsumerConfig
             {
-                BootstrapServers = "localhost:9093",
-                GroupId = "redpanda-perf-test-group",
+                BootstrapServers = "localhost:9092",
+                GroupId = "kafka-perf-test-group",
                 AutoOffsetReset = AutoOffsetReset.Latest,
                 EnableAutoCommit = false,
                 FetchMinBytes = 1,
@@ -110,7 +110,7 @@ namespace RedpandaConsumer
             }
             catch (OperationCanceledException)
             {
-                LogMessage("Consumer stopped");
+                LogMessage("Kafka Consumer stopped");
             }
             finally
             {
@@ -230,7 +230,7 @@ namespace RedpandaConsumer
 
         private static void SaveResultsToCsv(List<LatencyMeasurement> measurements)
         {
-            var csvPath = $"results-{DateTime.Now:yyyyMMdd-HHmmss}.csv";
+            var csvPath = $"kafka-results-{DateTime.Now:yyyyMMdd-HHmmss}.csv";
             File.WriteAllLines(csvPath,
                 new[] { "MessageId,LatencyMs,ReceivedTimestampMs,ReceivedTime" }
                 .Concat(measurements.Select(m => $"{m.MessageId},{m.LatencyMs},{m.ReceivedTimestampMs},{m.ReceivedTime:yyyy-MM-dd HH:mm:ss.fff}")));
